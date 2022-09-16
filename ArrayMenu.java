@@ -24,16 +24,25 @@ class Main {
   
   public static void populate_rand(){ // Fill array with random numbers????
     System.out.println("populating rand");
+    Random rand = new Random();
+    for (int i = 0; i < globalArray.length; i++){
+        globalArray[i] = rand.nextInt(100);
+    }
+    return;
   }
+  
   public static void populate_sequentially(){ // Fill array with an increment each time???
       System.out.println("populating sequen");
   }
+  
   public static void display(){ // Display array data???
     System.out.println("displaying");
-    // for (int i = 0; i < globalArray.length; i++){
-    //   System.out.print(globalArray[i]);
-    // }
+    for (int i = 0; i < globalArray.length; i++){
+       System.out.print(globalArray[i] + ", ");
+    }
+    System.out.print("array length: " + globalArray.length);
   }
+  
   public static void shuffle(){ // Display array data???
     int index, temp;
     Random random = new Random();
