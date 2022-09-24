@@ -178,6 +178,26 @@ class Main {
     System.out.println("Sorted!");
   }
 
+  public static void consecutiveIndex(){ // 10 consecutive indexes
+    int counter = 0;
+    int prevCounter = 0;
+    int finalNum = 0;
+    for (int i = 0; i < globalArray.length; i++){
+      if (i > 89){
+        break;
+      }
+      for (int j = 0; j < 11; j++){
+        counter += globalArray[i + j];
+      }
+      if (counter > prevCounter){
+        finalNum = counter;
+        prevCounter = counter;
+        counter = 0;
+      }
+    }
+    System.out.println("Max sum: " + finalNum);
+  }
+
   // This method exits out of the program
   public static void ExitProgram(){
     System.out.println("Exiting");
@@ -198,7 +218,8 @@ class Main {
     System.out.println("9 = Find number Occurance");
     System.out.println("10 = Replace Number");
     System.out.println("11 = Sort Array");
-    System.out.println("12 = exit");
+    System.out.println("12 = Consecutive Index");
+    System.out.println("13 = exit");
     System.out.println("Enter Desired command:");
   }
 
@@ -245,6 +266,9 @@ class Main {
         sortArray();
       }
       else if (decision == 12){
+        consecutiveIndex();
+      }
+      else if (decision == 13){
         ExitProgram();
       }
       else{
